@@ -40,6 +40,7 @@ app.post(BASE_API_PATH + "/contacts", (req,res)=>{
     db.insert(contact, (err)=>{
         if(err){
             console.log(Date() + " - " + err);
+            res.sendStatus(500);
         }else{
             res.sendStatus(201);
         }
