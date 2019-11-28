@@ -28,8 +28,10 @@ app.get(BASE_API_PATH + "/contacts", (req,res)=>{
             res.sendStatus(500);
         }else{
             res.send(contacts.map((contact)=>{
+
                 delete contact._id;
                 return contact;
+                
             }));
         }
     });
